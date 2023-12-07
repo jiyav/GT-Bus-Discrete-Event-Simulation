@@ -1,0 +1,15 @@
+Express Bus
+Median Bus Wait Time: 114.0
+IQR Bus Wait Time: 145.675
+Median Time On Bus: 181.3
+IQR Time On Bus: 122.125
+Median Travel Time: 311.2
+IQR Time On Bus: 122.125
+
+Non Express Bus
+Median Bus Wait Time: 134.4
+IQR Bus Wait Time: 258.1
+Median Time On Bus: 317.05
+IQR Time On Bus: 169.45
+Median Travel Time: 451.6
+IQR Time On Bus: 169.45
