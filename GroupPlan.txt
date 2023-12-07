@@ -1,19 +1,42 @@
 Bus Route Discrete Event Simulation Components and Dividing Tasks
-1. Simulation Entities: to reflect physical entities in the simulation environment: Bus, Bus Stop, Passenger, Traffic Light, Road Segment
+1. Simulation Entities: to reflect physical entities in the simulation environment: Bus, Bus Stop, Passenger, Traffic Light, 
+Road Segment
 - Relevant files: Bus.java, BusStop.java, Passenger.java, RoadSegment.java, TrafficLight.java
 
-2. Events: create logic that update the state's of involved entities when event is called. There are also some utility methods in there to help with logic
+2. Events: create logic that update the state's of involved entities when event is called. There are also some utility 
+methods in there to help with logic
 - Relevant files: Event.java
 
-3. Simulation Executive: figure out how events are represented, handled by scheduler, future event list, etc. Figure out how to set up the simulation clock/time so that it's accessible in the event logic. How does the scheduler interact with future event list? What about simultaneous events? Priority Queue? Without this step working, we cannot call or run the simulation. Call-back functions? Should event methods turn into objects? Do we need an interface? come up w a design to satisfy discrete event simulation protocols.  
-- Relevant files: Go look at the class slides/lecture on this topic and also the colab that shows the airport example, everything is based on that! Please!!. Add to SimulationExecutive.java or adjust existing set up if need be in Event.java. 
+3. Simulation Executive: figure out how events are represented, handled by scheduler, future event list, etc. Figure out how 
+to set up the simulation clock/time so that it's accessible in the event logic. How does the scheduler interact with future 
+event list? What about simultaneous events? Priority Queue? Without this step working, we cannot call or run the simulation. 
+Call-back functions? Should event methods turn into objects? Do we need an interface? come up w a design to satisfy discrete 
+event simulation protocols.  
+- Relevant files: Go look at the class slides/lecture on this topic and also the colab that shows the airport example, 
+everything is based on that! Please!!. Add to SimulationExecutive.java or adjust existing set up if need be in Event.java. 
 
 Steps 1-3 are complete, I need help with steps 4-6!! 
 
-4. Simulation Environment: Refer to the rough draft/idea in DES.java. Create several "driver" programs with different inputs to the simulation environment. I.e create a new environment with X types and number of buses, Y number of stops, etc and set the probability distributions of the physical entities that require it, like the road traffic index, passenger traffic, etc. You're essentially just tweaking some hard-code. But create these environments with intention so we can draw some conclusions. I.e one driver to represent low road traffic, high ped volume. or fewer bus stops, more buses, etc etc. be creative, come up with several and various test cases. Run the simulation on each driver and obtain results. or like keep certain variables the same, but tweak others and come up w a hypothesis on intended effects that we'll discover in the analysis. 
+4. Simulation Environment: Refer to the rough draft/idea in DES.java. Create several "driver" programs with different inputs 
+to the simulation environment. I.e create a new environment with X types and number of buses, Y number of stops, etc and set 
+the probability distributions of the physical entities that require it, like the road traffic index, passenger traffic, etc. 
+You're essentially just tweaking some hard-code. But create these environments with intention so we can draw some 
+conclusions. I.e one driver to represent low road traffic, high ped volume. or fewer bus stops, more buses, etc etc. be 
+creative, come up with several and various test cases. Run the simulation on each driver and obtain results. or like keep 
+certain variables the same, but tweak others and come up w a hypothesis on intended effects that we'll discover in the 
+analysis. 
 - Relevant files: working draft in DES.java. Create a new .java file for each environment you make
 
-5. Data collection. Right now, data is collected in class-level/static Maps/ArrayLists etc, holding an Bus, Bus Stop, and or Passenger's instance life cycle. Essentially, collecting objects as they are created/destroyed, and each object holds relevant time stamp info. Ex. in the passenger class, there is a class-level arraylist that added a passenger each time it arrives to its destination. A passenger object will presume to hold info like creationTime, onBoardBusTime, departFromBusTime, Starting destination, ending destination, etc. This is all really valuable information we can analyze. Find a way to extract the data from these class-level data structures when the simulation is over and convert to a .csv file with corresponding rows/columns. 
-- Relevant files: ArrayList<ArrayList<Passenger>> deadPassengers in Passenger.java, Map<String, ArrayList<Integer>> arrivalTimeMap in BusStop, also refer to where these variables are called/updated in Event.java's event methods
+5. Data collection. Right now, data is collected in class-level/static Maps/ArrayLists etc, holding an Bus, Bus Stop, and or 
+Passenger's instance life cycle. Essentially, collecting objects as they are created/destroyed, and each object holds 
+relevant time stamp info. Ex. in the passenger class, there is a class-level arraylist that added a passenger each time it 
+arrives to its destination. A passenger object will presume to hold info like creationTime, onBoardBusTime, 
+departFromBusTime, Starting destination, ending destination, etc. This is all really valuable information we can analyze. 
+Find a way to extract the data from these class-level data structures when the simulation is over and convert to a .csv file 
+with corresponding rows/columns. 
+- Relevant files: ArrayList<ArrayList<Passenger>> deadPassengers in Passenger.java, Map<String, ArrayList<Integer>> 
+arrivalTimeMap in BusStop, also refer to where these variables are called/updated in Event.java's event methods
 
-6. Data analysis. Assuming we have a bunch of data collected from .csv files, we can run some data analysis to determine which simulation environment produced the best results in terms of passengers getting from point A to B fastest. We can also look at bus frequency at each bus stop
+6. Data analysis. Assuming we have a bunch of data collected from .csv files, we can run some data analysis to determine 
+which simulation environment produced the best results in terms of passengers getting from point A to B fastest. We can also 
+look at bus frequency at each bus stop
