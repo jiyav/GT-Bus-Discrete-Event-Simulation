@@ -1,6 +1,6 @@
 
 # DES2: GT Bus Discrete Event Simulation
-Report: https://drive.google.com/file/d/1xdQXwREVT0k8RpGAJggHid01-EDdg9lt/view?usp=sharing
+Report: https://docs.google.com/document/d/1fHYXjvcPzBmfSv0OkZdOE4SzlAvXD3rKUOb3p4F1ecw/edit?usp=sharing
 ## Introduction
 Welcome to DES2, a comprehensive Java-based discrete event simulation framework designed to model and analyze traffic patterns and public transport systems. Our project leverages an event-driven approach to simulate real-world scenarios involving road traffic, bus stops, passengers, and traffic lights.
 
@@ -29,6 +29,8 @@ Contributions are what make the open-source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+# My contributions to the project
+I designed and implemented the discrete event simulation, and also finalized the report. 
 
 
 
